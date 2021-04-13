@@ -32,12 +32,14 @@
     <PackageVersion>1.0.0</PackageVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/Azure/azure-notificationhubs-xamarin/main/.github/icons/aznh-icon-128x128.png</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/Azure/azure-notificationhubs-xamarin/main/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Azure/azure-notificationhubs-xamarin/</PackageProjectUrl>
+    <!--<PackageProjectUrl>https://github.com/Azure/azure-notificationhubs-xamarin/</PackageProjectUrl>-->
+    <PackageProjectUrl>https://github.com/mamift/azure-notificationhubs-xamarin</PackageProjectUrl>
     <Authors>Microsoft</Authors>
     <Owners>Microsoft</Owners>
-    <Description>Azure Notification Hubs SDK for Xamarin Forms</Description>
+    <Description>Azure Notification Hubs SDK for Xamarin Forms (this nuget package is based on a fork of the official Azure project, as Microsoft have not yet published a nuget package for this library yet, as of April 2021).</Description>
     <PackageDescription>Azure Notification Hubs SDK for Xamarin Forms</PackageDescription>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <!--<PackageOutputPath>$(SolutionDir)\.artifacts</PackageOutputPath>-->
   </PropertyGroup>
 
