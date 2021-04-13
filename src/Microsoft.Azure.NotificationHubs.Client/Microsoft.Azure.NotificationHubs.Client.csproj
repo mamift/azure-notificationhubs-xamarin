@@ -43,7 +43,7 @@
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) OR $(TargetFramework.StartsWith('Xamarin.TVOS')) OR $(TargetFramework.StartsWith('Xamarin.Mac')) ">
     <!-- Add Xamarin iOS bindings -->
-    <PackageReference Include="Xamarin.Azure.NotificationHubs.iOS" Version="3.1.2" />
+    <PackageReference Include="Xamarin.Azure.NotificationHubs.iOS" Version="3.1.1" />
 
     <!-- iOS files have ios.cs -->
     <Compile Include="**\*.ios.cs" />
