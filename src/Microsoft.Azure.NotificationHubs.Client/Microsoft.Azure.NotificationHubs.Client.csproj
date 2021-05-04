@@ -7,9 +7,9 @@
     <!-- Target iOS, tvOS, macOS, and Android -->
     <TargetFrameworks>Xamarin.iOS10;Xamarin.TVOS10;Xamarin.Mac20;MonoAndroid10.0;netstandard2.1;netstandard2.0</TargetFrameworks>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
-    <Version>1.1.0.0-beta</Version>
+    <AssemblyVersion>1.1.0.1</AssemblyVersion>
+    <AssemblyFileVersion>1.1.0.1</AssemblyFileVersion>
+    <Version>1.1.0.1-beta</Version>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>Azure;Push;NotificationHubs;Xamarin</PackageTags>
 
@@ -40,7 +40,8 @@
     <PackageDescription>Azure Notification Hubs SDK for Xamarin Forms</PackageDescription>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>1.1.0.0</FileVersion>
+    <FileVersion>1.1.0.1</FileVersion>
+    <PackageReleaseNotes>v1.1.0.1-beta: Resolves an issue with an downstream NullReferenceException occurring when an installation has no existing tags on iOS. Occurs when invoking NotificationHub.GetTags().</PackageReleaseNotes>
     <!--<PackageOutputPath>$(SolutionDir)\.artifacts</PackageOutputPath>-->
   </PropertyGroup>
 
