@@ -1,6 +1,6 @@
 # NOTE: This is an unofficial fork!
 This repo is an unofficial fork of https://github.com/Azure/azure-notificationhubs-xamarin.
-For some bizarre reason Microsoft released code that is NOT compilable! Cloning the [official Azure repo](https://github.com/Azure/azure-notificationhubs-xamarin) results in a bizarre build error due to a nuget dependency that is not actually publicly available yet. Check the `main` branch history to see [what's different](https://github.com/mamift/azure-notificationhubs-xamarin/compare).
+For some bizarre reason Microsoft released code that is NOT compilable! Cloning the [official Azure repo](https://github.com/Azure/azure-notificationhubs-xamarin) results in a bizarre [build error](https://github.com/Azure/azure-notificationhubs-xamarin/issues/19) due to a nuget dependency that is not actually publicly available yet. Check the `main` branch history to see [what's different](https://github.com/mamift/azure-notificationhubs-xamarin/compare).
 
 The unofficial nuget package is published here:
 
