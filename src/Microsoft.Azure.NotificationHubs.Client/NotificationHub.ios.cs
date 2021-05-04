@@ -282,6 +282,12 @@ namespace Microsoft.Azure.NotificationHubs.Client
         public static List<string> GetTags(NSArray nsArray)
         {
             var items = new List<string>();
+
+            if (nsArray == null) 
+            {
+                return items;
+            }
+
             for (var i = 0; i < (int)nsArray.Count; i++)
             {
                 var item = nsArray.GetItem<NSString>((nuint)i).ToString();
