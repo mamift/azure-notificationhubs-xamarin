@@ -133,14 +133,20 @@ namespace Microsoft.Azure.NotificationHubs.Client
         static bool PlatformAddTags(string[] tags)
         {
             var nsArray = NSArray.FromStrings(tags);
-            if (nsArray is NSArray<NSString> nsStrings) {
-                using (nsArray)
-                using (nsStrings) {
-                    return MSNotificationHub.AddTags(nsStrings);
+            using (nsArray) {
+                if (nsArray is NSArray<NSString> nsStrings) {
+                    using (nsStrings) {
+                        return MSNotificationHub.AddTags(nsStrings);
+                    }
                 }
-            }
+            
+                for (int i = 0; i < tags.Length; i++) {
+                    var result = MSNotificationHub.AddTag(tags[i]);
+                    if (!result) return false;
+                }
 
-            throw new InvalidOperationException("Unable to cast NSArray to NSArray<NSString>!");
+                return true;
+            }
         }
 
         static void PlatformClearTags() => MSNotificationHub.ClearTags();
