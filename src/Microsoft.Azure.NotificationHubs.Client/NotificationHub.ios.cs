@@ -130,7 +130,19 @@ namespace Microsoft.Azure.NotificationHubs.Client
         #region Tags
 
         static bool PlatformAddTag(string tag) => MSNotificationHub.AddTag(tag);
-        static bool PlatformAddTags(string[] tags) => MSNotificationHub.AddTags((NSArray<NSString>)NSArray.FromStrings(tags));
+        static bool PlatformAddTags(string[] tags)
+        {
+            var nsArray = NSArray.FromStrings(tags);
+            if (nsArray is NSArray<NSString> nsStrings) {
+                using (nsArray)
+                using (nsStrings) {
+                    return MSNotificationHub.AddTags(nsStrings);
+                }
+            }
+
+            throw new InvalidOperationException("Unable to cast NSArray to NSArray<NSString>!");
+        }
+
         static void PlatformClearTags() => MSNotificationHub.ClearTags();
         static bool PlatformRemoveTag(string tag) => MSNotificationHub.RemoveTag(tag);
         static bool PlatformRemoveTags(string[] tags) => MSNotificationHub.RemoveTags((NSArray<NSString>)NSArray.FromStrings(tags));
