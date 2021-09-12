@@ -141,7 +141,7 @@ namespace Microsoft.Azure.NotificationHubs.Client
                 }
             
                 for (int i = 0; i < tags.Length; i++) {
-                    var result = MSNotificationHub.AddTag(tags[i]);
+                    var result = PlatformAddTag(tags[i]);
                     if (!result) return false;
                 }
 
@@ -151,7 +151,26 @@ namespace Microsoft.Azure.NotificationHubs.Client
 
         static void PlatformClearTags() => MSNotificationHub.ClearTags();
         static bool PlatformRemoveTag(string tag) => MSNotificationHub.RemoveTag(tag);
-        static bool PlatformRemoveTags(string[] tags) => MSNotificationHub.RemoveTags((NSArray<NSString>)NSArray.FromStrings(tags));
+
+        static bool PlatformRemoveTags(string[] tags)
+        {
+            var nsArray = NSArray.FromStrings(tags);
+            using (nsArray) {
+                if (nsArray is NSArray<NSString> nsStrings) {
+                    using (nsStrings) {
+                        return MSNotificationHub.RemoveTags(nsStrings);
+                    }
+                }
+
+                for (int i = 0; i < tags.Length; i++) {
+                    var result = PlatformRemoveTag(tags[i]);
+                    if (!result) return false;
+                }
+
+                return true;
+            }
+        }
+
         static string[] PlatformGetTags() => MSInstallationExtensions.GetTags(MSNotificationHub.GetTags()).ToArray();
 
         #endregion
