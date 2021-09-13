@@ -7,9 +7,9 @@
     <!-- Target iOS, tvOS, macOS, and Android -->
     <TargetFrameworks>Xamarin.iOS10;Xamarin.TVOS10;Xamarin.Mac20;MonoAndroid10.0;netstandard2.1;netstandard2.0</TargetFrameworks>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <AssemblyVersion>1.1.0.4</AssemblyVersion>
-    <AssemblyFileVersion>1.1.0.4</AssemblyFileVersion>
-    <Version>1.1.0.4-beta</Version>
+    <AssemblyVersion>1.1.0.5</AssemblyVersion>
+    <AssemblyFileVersion>1.1.0.5</AssemblyFileVersion>
+    <Version>1.1.0.5-beta</Version>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>Azure;Push;NotificationHubs;Xamarin</PackageTags>
 
@@ -29,7 +29,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Azure-NotificationHubs.Client.Xamarin</PackageId>
-    <PackageVersion>1.1.0.4-beta</PackageVersion>
+    <PackageVersion>1.1.0.5-beta</PackageVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/Azure/azure-notificationhubs-xamarin/main/.github/icons/aznh-icon-128x128.png</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/Azure/azure-notificationhubs-xamarin/main/LICENSE</PackageLicenseUrl>
     <!--<PackageProjectUrl>https://github.com/Azure/azure-notificationhubs-xamarin/</PackageProjectUrl>-->
@@ -40,7 +40,7 @@
     <PackageDescription>Azure Notification Hubs SDK for Xamarin Forms</PackageDescription>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>1.1.0.4</FileVersion>
+    <FileVersion>1.1.0.5</FileVersion>
     <PackageReleaseNotes>v1.1.0.3-beta: Attempting to fix an error that occurs when adding tags for iOS devices (iOS 14.4+).
 
 v1.1.0.1-beta: Resolves an issue with an downstream NullReferenceException occurring when an installation has no existing tags on iOS. Occurs when invoking NotificationHub.GetTags().</PackageReleaseNotes>
